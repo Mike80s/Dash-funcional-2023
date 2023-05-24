@@ -20,7 +20,7 @@ df = pd.read_csv("data.csv", encoding="ISO-8859-1")
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 # fig= px.bar(df, x='Tiene internet en casa', y='Puntaje global')
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-
+server=app.server
 app.layout = html.Div([
     html.H1(children="Análisis de las pruebas Saber 11 año 2020"),
     dcc.Graph(figure=px.histogram(df, x='Tiene internet en casa'))
